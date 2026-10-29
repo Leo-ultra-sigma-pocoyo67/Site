@@ -62,9 +62,12 @@
             background-color: #218838;
         }
         input {
-        color: #777;
-        border-radius: 7px;
-        max-width: 200px;
+        box-sizing: border-box;
+        padding: 14px 16px;
+        font-size: 16px;
+        color: #333;
+        borer: 1px solid #ccc;
+        border-radius: 8px;
         width: 100%;
 
     </style>
@@ -96,7 +99,7 @@
             document.getElementById('main'). style.display = "none";
             document.getElementById("form"). style.display = "block";
             document.getElementById("username").value = tg.initDataUnsafe.first_name;
-            
+
 
         });
         document.getElementById("order").addEventListener("click", ()=>{
