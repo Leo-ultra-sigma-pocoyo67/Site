@@ -23,6 +23,10 @@
             max-width: 400px; /* Ограничиваем ширину карточки */
             width: 100%;
         }
+        #form {
+            display: none;
+            text-align: center;
+
         h1 {
             color: #333;
             font-size: 24px;
@@ -57,18 +61,47 @@
         button:hover {
             background-color: #218838;
         }
+        input {
+        color: #777;
+        border-radius: 7px;
+        max-width: 200px;
+        width: 100%;
+
     </style>
 </head>
 <body>
     <div id="main">
         <h1>Онлайн магазин</h1>
-        
+
         <!-- Сюда вставляй путь к фото -->
         <img src="Spike_normal.png" alt="Фото товара">
         <div class="photo-caption">Фото товара</div>
-        
+
         <h2>Товар</h2>
-        <button type="submit">Купить</button>
+        <button type="submit" id="buy">Купить</button>
+
     </div>
+    <form id="form">
+        <input type="text" placeholder="Имя" id="username">
+        <input type="text" placeholder="Email" id="mail">
+        <input type="number" placeholder="Количество товара" id="count">
+        <button type="submit" id="order">Оформить</button>
+    </form>
+    <script src="https://telegram.org/js/telegram-web-app.js?64"></script>
+    <script>
+        let tg = window.Telegram.WebApp;
+        let buy = document.getElementById('buy')
+        let order = document.getElementById('order')
+        buy.addEventListener("click", ()=>{
+            document.getElementById('main'). style.display = "none";
+            document.getElementById("form"). style.display = "block";
+            document.getElementById("username").value = tg.initDataUnsafe.first_name;
+            
+
+        });
+        document.getElementById("order").addEventListener("click", ()=>{
+            tg.close();
+        });
+    </script>
 </body>
 </html>
