@@ -108,6 +108,11 @@
             let mail = document.getElementById("mail").value;
             let count = document.getElementById("count").value;
             tg.close();
+            let data = {name: name
+            mail: mail
+            count: count};
+            tg.sendData(JSON.stringify(data))
+             
         });
         
         
