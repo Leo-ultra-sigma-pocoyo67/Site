@@ -99,12 +99,15 @@
         buy.addEventListener("click", ()=>{
             document.getElementById('main'). style.display = "none";
             document.getElementById("form"). style.display = "block";
-            document.getElementById("username").value = tg.initDataUnsafe.first_name;
+            document.getElementById("username").value = tg.initDataUnsafe.first_name+""tg.initDataUnsafe.last_name;
 
 
         });
         document.getElementById("order").addEventListener("click", ()=>{
             tg.close();
+            let name = document.getElementById("username").value;
+            let mail = document.getElementById("mail").value;
+            let count = document.getElementById("count").value;
         });
     </script>
 </body>
