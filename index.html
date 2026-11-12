@@ -107,11 +107,12 @@
             let name = document.getElementById("username").value;
             let mail = document.getElementById("mail").value;
             let count = document.getElementById("count").value;
-            tg.close();
-            let data = {name: name
-            mail: mail
-            count: count};
+            let data = {name: name,
+                mail: mail,
+                count: count};
             tg.sendData(JSON.stringify(data));
+            tg.close();
+
 
         });
         
